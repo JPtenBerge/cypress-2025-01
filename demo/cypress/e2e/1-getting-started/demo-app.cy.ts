@@ -1,4 +1,10 @@
 describe('Demo app', () => {
+
+    beforeEach(() => {
+        cy.visit('http://127.0.0.1:8080/#/form-with-network');
+        cy.title().as('pageTitle');
+    });
+
     it('supports shadow DOM', () => {
         cy.visit('http://127.0.0.1:8080/#/shadow-dom');
 
@@ -83,4 +89,12 @@ describe('Demo app', () => {
         cy.visit('http://127.0.0.1:8080/#/form-with-network');
         cy.get('table tbody tr').should('have.length', 4);
     });
-})
+
+    it('aliases stuff', () => {
+        cy.get('@pageTitle').then(pageTitle => {
+            cy.get('h1').should('have.text', pageTitle);
+        })
+    });
+
+
+});
