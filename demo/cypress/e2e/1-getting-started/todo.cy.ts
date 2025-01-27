@@ -36,7 +36,7 @@ describe('Todo-app', () => {
         })
     });
 
-    it.only('takes screenshots', () => {
+    it('takes screenshots', () => {
         cy.visit('https://todomvc.com/examples/react/dist/');
         cy.getByTestId('text-input').type(`qqq{enter}`);
 

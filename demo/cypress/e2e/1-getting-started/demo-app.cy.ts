@@ -1,8 +1,9 @@
 describe('Demo app', () => {
 
     beforeEach(() => {
-        cy.visit('http://127.0.0.1:8080/#/form-with-network');
-        cy.title().as('pageTitle');
+        // voor test "aliases stuff"
+        // cy.visit('http://127.0.0.1:8080/#/form-with-network');
+        // cy.title().as('pageTitle');
     });
 
     it('supports shadow DOM', () => {
