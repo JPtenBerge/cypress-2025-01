@@ -9,10 +9,14 @@ describe('Mijn eigen testsuite', () => {
         cy.get('h1').should('exist');
 
         cy.get('.announcementBar_mb4j button').click();
-        
+
 
         console.log('whoa!');
         cy.log('meer whoa!');
+
+        cy.login('qqq', 'www')
+
+        cy.createDefaultTodos()
 
         // cy.get('h1').should('', 'TypeScript Support');
         // cy.get('h1').should('', 'TypeScript Support');

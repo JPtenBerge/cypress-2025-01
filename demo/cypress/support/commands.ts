@@ -35,3 +35,15 @@
 //     }
 //   }
 // }
+
+Cypress.Commands.add('login', (username, password) => {
+    cy.get('#input-username').type(username);
+    cy.get('#input-password').type(password);
+
+    cy.get('#login-form button').click();
+});
+
+
+Cypress.Commands.add('getByTestId', (testid: string) => {
+    return cy.get(`[data-testid="${testid}"]`);
+});
